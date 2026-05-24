@@ -429,10 +429,10 @@
     .gallery-inner { max-width: 1240px; margin: 0 auto; }
     .gallery-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 2px; margin-top: 48px;
+      gap: 2px; margin-top: 0;
       background: var(--border); border: 1px solid var(--border);
     }
-    @media (max-width: 720px) { .gallery-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 720px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
 
     .gallery-item { overflow: hidden; position: relative; background: var(--ink); cursor: zoom-in; }
     .gallery-item img {
@@ -463,7 +463,10 @@
     }
     .gallery-item:hover .gallery-item-cap { opacity: 1; }
 
-    /* ─── GALLERY HERO ROW ─── */
+    @media (max-width: 720px) {
+      .gallery-section { padding: 60px 0; }
+      .gallery-section > div { padding: 0 16px !important; }
+    }
     .gallery-hero-row {
       border: 1px solid var(--border);
       background: var(--border);
@@ -1269,7 +1272,7 @@
         <div class="gallery-item-cap">Upside Down</div>
       </div>
 
-      <!-- ROW 2: Three images side by side -->
+      <!-- ALL 6 IMAGES — 3 cols desktop, 2 cols mobile -->
       <div class="gallery-grid" style="margin-top:2px;">
         <div class="gallery-item reveal" onclick="openGalleryLightbox(this)" data-caption="Falls the Time">
           <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/12_songs_one_night/falls_the_time.png" alt="Falls the Time" loading="lazy" />
@@ -1286,10 +1289,6 @@
           <div class="gallery-item-overlay"><span>View Full Size</span></div>
           <div class="gallery-item-cap">Wutdafkryingoutloud</div>
         </div>
-      </div>
-
-      <!-- ROW 3: Three images side by side -->
-      <div class="gallery-grid" style="margin-top:2px;">
         <div class="gallery-item reveal" onclick="openGalleryLightbox(this)" data-caption="Moment of Passion">
           <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/the_performances/moment_of_passion.png" alt="Moment of Passion" loading="lazy" />
           <div class="gallery-item-overlay"><span>View Full Size</span></div>
