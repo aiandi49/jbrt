@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JBRT — MetaEarth Music Hall of Fame | Inaugural Inductee</title>
+  <meta name="description" content="JIMMIEBEETLES ROCK THEATER (JBRT) — The first band ever inducted into the MetaEarth Music Hall of Fame. Best of The Wildstarfires Live, Album No. 1 of 3." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream:      #F7F4EE;
+      --warm:       #EDE8DF;
+      --parchment:  #E4DCCC;
+      --stone:      #C9BFA8;
+      --ink:        #1C1A17;
+      --ink-mid:    #4A4640;
+      --ink-mute:   #8A837A;
+      --gold:       #B8963E;
+      --gold-lt:    #D4AC58;
+      --gold-pale:  #DBBE7A;
+      --gold-bg:    rgba(184,150,62,0.07);
+      --gold-line:  rgba(184,150,62,0.22);
+      --white:      #FFFFFF;
+      --border:     rgba(100,90,76,0.13);
+      --border-md:  rgba(100,90,76,0.22);
+      --shadow-sm:  0 2px 10px rgba(28,26,23,0.06);
+      --shadow-md:  0 8px 32px rgba(28,26,23,0.10);
+      --shadow-lg:  0 24px 64px rgba(28,26,23,0.14);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Paper texture */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 50% -5%, rgba(184,150,62,0.05) 0%, transparent 65%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.68' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.026'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 0;
+    }
+
+    /* ─── MASTHEAD ─── */
+    .masthead {
+      position: relative; z-index: 10;
+      background: var(--cream);
+      border-bottom: 1px solid var(--border-md);
+    }
+    .masthead-inner {
+      max-width: 1240px; margin: 0 auto; padding: 0 36px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 70px;
+    }
+    .masthead-left { display: flex; align-items: center; gap: 18px; }
+    .masthead-wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem; font-weight: 600;
+      color: var(--ink); letter-spacing: 0.09em; text-transform: uppercase;
+    }
+    .masthead-wordmark em { color: var(--gold); font-style: normal; }
+    .masthead-pipe { width: 1px; height: 26px; background: var(--border-md); }
+    .masthead-sub {
+      font-size: 0.67rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--ink-mute); font-weight: 500;
+    }
+    .masthead-badge {
+      font-size: 0.63rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); border: 1px solid var(--gold-line);
+      background: var(--gold-bg); padding: 5px 14px; font-weight: 500;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative; z-index: 1;
+      min-height: 92vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 80px 32px 100px;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 75% 55% at 50% 0%, rgba(184,150,62,0.07) 0%, transparent 62%),
+        linear-gradient(180deg, var(--cream) 0%, var(--warm) 100%);
+    }
+    .hero-rule {
+      position: relative; z-index: 2;
+      width: min(500px, 88%); height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-line), transparent);
+    }
+    .hero-eyebrow {
+      position: relative; z-index: 2;
+      font-size: 0.63rem; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--gold); font-weight: 500;
+      margin-bottom: 22px;
+      animation: fadeSlideDown 0.9s 0.2s ease both;
+    }
+    .hero-title {
+      position: relative; z-index: 2;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(5.5rem, 18vw, 15rem);
+      font-weight: 900; line-height: 0.87; letter-spacing: -0.01em;
+      color: var(--ink);
+      animation: fadeSlideUp 0.95s 0.3s ease both;
+    }
+    .hero-subtitle {
+      position: relative; z-index: 2;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.15rem, 3vw, 2rem);
+      font-weight: 300; font-style: italic;
+      letter-spacing: 0.06em; color: var(--ink-mid);
+      margin-top: 14px;
+      animation: fadeSlideUp 0.95s 0.45s ease both;
+    }
+    .hero-divider {
+      position: relative; z-index: 2;
+      display: flex; align-items: center; gap: 18px;
+      margin: 40px auto; width: min(420px, 85%);
+      animation: fadeIn 0.8s 0.65s ease both;
+    }
+    .hero-divider::before, .hero-divider::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-md));
+    }
+    .hero-divider::after { background: linear-gradient(90deg, var(--border-md), transparent); }
+    .hero-divider-glyph {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; color: var(--gold); line-height: 1;
+    }
+    .hero-desc {
+      position: relative; z-index: 2;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-style: italic; font-weight: 400;
+      color: var(--ink-mid); max-width: 640px; line-height: 1.75;
+      animation: fadeIn 0.9s 0.8s ease both;
+    }
+    .hero-meta {
+      position: relative; z-index: 2;
+      font-size: 0.68rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--ink-mute);
+      margin-top: 12px;
+      animation: fadeIn 0.9s 0.9s ease both;
+    }
+    .hero-cta-row {
+      position: relative; z-index: 2;
+      display: flex; gap: 14px; margin-top: 44px;
+      flex-wrap: wrap; justify-content: center;
+      animation: fadeSlideUp 0.85s 1.05s ease both;
+    }
+
+    /* ─── BUTTONS ─── */
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: var(--gold); color: var(--white);
+      font-family: 'DM Sans', sans-serif; font-size: 0.74rem;
+      font-weight: 500; letter-spacing: 0.08em;
+      text-decoration: none; padding: 13px 28px;
+      border-radius: 2px; transition: all 0.25s;
+    }
+    .btn-gold:hover {
+      background: var(--gold-lt); transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(184,150,62,0.28);
+    }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: transparent; color: var(--ink-mid);
+      font-family: 'DM Sans', sans-serif; font-size: 0.74rem;
+      font-weight: 500; letter-spacing: 0.08em;
+      text-decoration: none; padding: 12px 28px;
+      border-radius: 2px; border: 1px solid var(--border-md);
+      transition: all 0.25s;
+    }
+    .btn-outline:hover { background: var(--warm); border-color: var(--stone); }
+    .btn-ink {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: var(--ink); color: var(--cream);
+      font-family: 'DM Sans', sans-serif; font-size: 0.74rem;
+      font-weight: 500; letter-spacing: 0.08em;
+      text-decoration: none; padding: 13px 28px;
+      border-radius: 2px; transition: all 0.25s;
+    }
+    .btn-ink:hover { background: var(--ink-mid); transform: translateY(-1px); }
+
+    /* ─── MARQUEE ─── */
+    .announce-band {
+      background: var(--ink); padding: 12px 0;
+      overflow: hidden; position: relative; z-index: 5;
+      width: 100%; max-width: 100vw;
+    }
+    .marquee-track {
+      display: flex; animation: marquee 26s linear infinite; white-space: nowrap;
+    }
+    .marquee-item {
+      display: inline-flex; align-items: center; gap: 22px;
+      padding: 0 32px;
+      font-size: 0.58rem; font-weight: 500;
+      letter-spacing: 0.24em; text-transform: uppercase; color: var(--cream);
+    }
+    .marquee-sep { color: var(--gold-pale); opacity: 0.65; }
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* ─── SECTION SHARED ─── */
+    section { position: relative; z-index: 1; }
+    .section-eyebrow {
+      font-size: 0.62rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold);
+      font-weight: 500; margin-bottom: 10px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .section-eyebrow::before {
+      content: ''; display: block;
+      width: 28px; height: 1px; background: var(--gold); flex-shrink: 0;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      font-weight: 700; line-height: 1.04; letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+
+    /* ─── PRESS RELEASE ─── */
+    .press { padding: 108px 36px; max-width: 1240px; margin: 0 auto; }
+    .press-inner {
+      display: grid; grid-template-columns: 272px 1fr;
+      gap: 84px; align-items: start;
+    }
+    @media (max-width: 880px) { .press-inner { grid-template-columns: 1fr; gap: 52px; } }
+
+    .press-left { position: sticky; top: 28px; }
+
+    .hall-seal {
+      width: 156px; height: 156px;
+      border: 1px solid var(--gold-line); border-radius: 50%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      background: var(--gold-bg); margin-bottom: 36px;
+      position: relative;
+    }
+    .hall-seal::before {
+      content: ''; position: absolute; inset: 7px;
+      border: 1px solid rgba(184,150,62,0.11); border-radius: 50%;
+    }
+    .hall-seal .seal-year {
+      font-size: 0.53rem; letter-spacing: 0.26em;
+      color: var(--gold); text-transform: uppercase; font-weight: 500;
+    }
+    .hall-seal .seal-no {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem; color: var(--gold); line-height: 1; font-weight: 700;
+    }
+    .hall-seal .seal-text {
+      font-size: 0.53rem; letter-spacing: 0.15em;
+      color: var(--ink-mute); text-align: center;
+      text-transform: uppercase; line-height: 1.65;
+    }
+
+    .press-stat { padding: 13px 0; border-bottom: 1px solid var(--border); }
+    .press-stat:first-of-type { border-top: 1px solid var(--border); }
+    .press-stat .stat-label {
+      font-size: 0.59rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--ink-mute); font-weight: 500; margin-bottom: 3px;
+    }
+    .press-stat .stat-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem; font-weight: 500; color: var(--ink);
+    }
+
+    .press-body p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.05rem, 1.9vw, 1.28rem);
+      line-height: 1.88; color: var(--ink-mid); margin-bottom: 22px;
+    }
+    .press-body p strong { color: var(--ink); font-weight: 600; }
+
+    .press-pull-quote {
+      border-left: 2px solid var(--gold);
+      padding: 18px 26px; margin: 36px 0;
+      background: var(--gold-bg); border-radius: 0 2px 2px 0;
+    }
+    .press-pull-quote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2.3vw, 1.5rem);
+      font-style: italic; color: var(--ink); line-height: 1.55; margin: 0 !important;
+    }
+
+    /* ─── ALBUM HERO ─── */
+    .album-hero {
+      padding: 96px 36px;
+      background: var(--warm);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .album-hero-inner {
+      max-width: 1240px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 84px; align-items: center;
+    }
+    @media (max-width: 880px) { .album-hero-inner { grid-template-columns: 1fr; } }
+
+    .album-art-frame { position: relative; }
+    .album-art-frame::before {
+      content: ''; position: absolute; inset: -13px;
+      border: 1px solid var(--gold-line); border-radius: 1px;
+    }
+    .album-art-num {
+      position: absolute; top: -40px; right: 0;
+      font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--white); background: var(--gold);
+      padding: 4px 13px; font-weight: 500;
+    }
+    .album-art-frame img { width: 100%; display: block; box-shadow: var(--shadow-lg); }
+
+    .album-info { padding: 14px 0; }
+    .album-info .album-num {
+      font-size: 0.6rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 14px;
+    }
+    .album-info h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.1rem, 4.8vw, 3.8rem);
+      font-weight: 700; line-height: 1.04; letter-spacing: -0.01em;
+      color: var(--ink); margin-bottom: 8px;
+    }
+    .album-info .album-year {
+      font-size: 0.73rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--ink-mute); margin-bottom: 26px;
+    }
+    .album-info p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.18rem; line-height: 1.85;
+      color: var(--ink-mid); margin-bottom: 16px;
+    }
+
+    /* ─── TRACKLIST ─── */
+    .tracklist-section { padding: 96px 36px; max-width: 1240px; margin: 0 auto; }
+    .tracklist-header {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      margin-bottom: 52px; padding-bottom: 24px; border-bottom: 1px solid var(--border-md);
+    }
+    @media (max-width: 600px) { .tracklist-header { flex-direction: column; align-items: flex-start; gap: 18px; } }
+
+    .tracks-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1px; background: var(--border); border: 1px solid var(--border);
+    }
+
+    .track-card {
+      position: relative; background: var(--cream);
+      overflow: hidden; display: flex; flex-direction: column;
+      transition: background 0.3s;
+    }
+    .track-card:hover {
+      background: var(--white); z-index: 2; box-shadow: var(--shadow-md);
+    }
+
+    .track-img-wrap {
+      position: relative; width: 100%; aspect-ratio: 4/3;
+      overflow: hidden; cursor: zoom-in; flex-shrink: 0;
+    }
+    .track-screenshot {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: top center; display: block;
+      filter: saturate(0.85) contrast(1.04);
+      transition: filter 0.4s, transform 0.55s;
+    }
+    .track-card:hover .track-screenshot { filter: saturate(1.06) contrast(1.06); transform: scale(1.04); }
+
+    .track-img-overlay {
+      position: absolute; inset: 0; background: rgba(28,26,23,0);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.3s;
+    }
+    .track-img-wrap:hover .track-img-overlay { background: rgba(28,26,23,0.3); }
+    .track-img-overlay span {
+      font-size: 0.57rem; letter-spacing: 0.22em; color: var(--white);
+      text-transform: uppercase; font-weight: 500; opacity: 0;
+      transition: opacity 0.3s; background: rgba(28,26,23,0.65);
+      padding: 7px 14px; border: 1px solid rgba(255,255,255,0.22);
+    }
+    .track-img-wrap:hover .track-img-overlay span { opacity: 1; }
+
+    .track-info {
+      padding: 15px 18px; display: flex; align-items: center;
+      gap: 14px; flex: 1; border-bottom: 1px solid var(--border);
+    }
+    .track-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-weight: 500; color: var(--gold);
+      min-width: 28px; line-height: 1;
+    }
+    .track-details { flex: 1; }
+    .track-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem; font-weight: 600; color: var(--ink); line-height: 1.35;
+    }
+    .track-qr {
+      width: 48px; height: 48px; object-fit: contain;
+      background: white; padding: 3px; flex-shrink: 0; border: 1px solid var(--border);
+    }
+    .track-buy {
+      display: block; width: 100%; background: transparent;
+      color: var(--gold); font-size: 0.6rem; font-weight: 500;
+      letter-spacing: 0.18em; text-transform: uppercase; text-align: center;
+      padding: 11px; text-decoration: none; transition: all 0.2s;
+    }
+    .track-buy:hover { background: var(--gold); color: var(--white); letter-spacing: 0.22em; }
+
+    /* ─── GALLERY ─── */
+    .gallery-section {
+      padding: 96px 36px;
+      background: var(--warm); border-top: 1px solid var(--border);
+    }
+    .gallery-inner { max-width: 1240px; margin: 0 auto; }
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2px; margin-top: 48px;
+      background: var(--border); border: 1px solid var(--border);
+    }
+    @media (max-width: 720px) { .gallery-grid { grid-template-columns: 1fr 1fr; } }
+
+    .gallery-item { overflow: hidden; position: relative; aspect-ratio: 4/3; background: var(--warm); cursor: zoom-in; }
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      filter: saturate(0.82) contrast(1.06); transition: all 0.55s;
+    }
+    .gallery-item:hover img { filter: saturate(1.1) contrast(1.06); transform: scale(1.04); }
+    .gallery-item-overlay {
+      position: absolute; inset: 0; background: rgba(28,26,23,0);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.3s;
+    }
+    .gallery-item:hover .gallery-item-overlay { background: rgba(28,26,23,0.25); }
+    .gallery-item-overlay span {
+      font-size: 0.57rem; letter-spacing: 0.22em; color: var(--white);
+      text-transform: uppercase; font-weight: 500; opacity: 0;
+      transition: opacity 0.3s; background: rgba(28,26,23,0.65);
+      padding: 7px 14px; border: 1px solid rgba(255,255,255,0.22);
+    }
+    .gallery-item:hover .gallery-item-overlay span { opacity: 1; }
+    .gallery-item-cap {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(0deg, rgba(28,26,23,0.72) 0%, transparent 100%);
+      padding: 22px 12px 10px;
+      font-size: 0.57rem; letter-spacing: 0.16em; color: var(--cream);
+      text-transform: uppercase; font-weight: 500;
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .gallery-item:hover .gallery-item-cap { opacity: 1; }
+
+    /* ─── INDUCTION ─── */
+    .induction {
+      padding: 128px 36px; text-align: center;
+      background: var(--ink); border-top: 1px solid var(--border);
+      position: relative; overflow: hidden;
+    }
+    .induction::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 55% at 50% 50%, rgba(184,150,62,0.055) 0%, transparent 65%);
+    }
+    .induction-inner { position: relative; z-index: 2; }
+    .induction-label {
+      font-size: 0.63rem; letter-spacing: 0.28em;
+      text-transform: uppercase; color: var(--gold-pale); font-weight: 500; margin-bottom: 20px;
+    }
+    .induction-number {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(7rem, 22vw, 18rem);
+      font-weight: 900; color: transparent;
+      -webkit-text-stroke: 1px rgba(184,150,62,0.26);
+      line-height: 0.87; letter-spacing: -0.02em;
+    }
+    .induction-copy {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: clamp(1.1rem, 2.5vw, 1.55rem);
+      color: rgba(247,244,238,0.62); max-width: 520px;
+      margin: 28px auto 0; line-height: 1.8;
+    }
+
+    /* ─── TRILOGY ─── */
+    .trilogy-section { padding: 108px 36px; max-width: 1240px; margin: 0 auto; }
+    .albums-row {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 22px; margin-top: 58px;
+    }
+    @media (max-width: 880px) { .albums-row { grid-template-columns: 1fr; } }
+
+    .album-card {
+      background: var(--white); border: 1px solid var(--border);
+      overflow: hidden; text-decoration: none; display: block;
+      transition: all 0.35s; box-shadow: var(--shadow-sm);
+    }
+    .album-card:hover {
+      border-color: var(--gold-line); transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+    .album-card-img {
+      width: 100%; aspect-ratio: 1; object-fit: cover; display: block;
+      filter: saturate(0.9) contrast(1.04); transition: filter 0.4s, transform 0.5s;
+    }
+    .album-card:hover .album-card-img { filter: saturate(1.05) contrast(1.06); transform: scale(1.03); }
+
+    /* Album card image wrap — click to fullview */
+    .album-card-img-wrap {
+      position: relative; overflow: hidden; cursor: zoom-in;
+      aspect-ratio: 1; width: 100%;
+    }
+    .album-card-img-wrap .album-card-img {
+      position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: unset;
+    }
+    .album-card-img-overlay {
+      position: absolute; inset: 0;
+      background: rgba(28,26,23,0);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.3s; z-index: 2;
+    }
+    .album-card-img-wrap:hover .album-card-img-overlay { background: rgba(28,26,23,0.32); }
+    .album-card-img-overlay span {
+      font-size: 0.57rem; letter-spacing: 0.22em; color: var(--white);
+      text-transform: uppercase; font-weight: 500; opacity: 0;
+      transition: opacity 0.3s; background: rgba(28,26,23,0.65);
+      padding: 7px 14px; border: 1px solid rgba(255,255,255,0.22);
+    }
+    .album-card-img-wrap:hover .album-card-img-overlay span { opacity: 1; }
+    .album-card-body { padding: 22px 24px 26px; border-top: 1px solid var(--border); }
+    .album-card-status {
+      font-size: 0.57rem; letter-spacing: 0.2em;
+      text-transform: uppercase; font-weight: 500; margin-bottom: 8px;
+    }
+    .status-live { color: var(--gold); }
+    .status-soon { color: var(--ink-mute); }
+    .album-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 600; color: var(--ink);
+      line-height: 1.2; margin-bottom: 4px;
+    }
+    .album-card-num { font-size: 0.72rem; color: var(--ink-mute); letter-spacing: 0.08em; }
+    .album-card-cta {
+      display: block; margin-top: 18px; padding: 10px 18px; text-align: center;
+      font-size: 0.67rem; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--white); background: var(--ink);
+      transition: background 0.25s; border-radius: 2px;
+    }
+    .album-card:hover .album-card-cta { background: var(--gold); }
+    .album-card-cta.disabled { background: var(--border-md); color: var(--ink-mute); pointer-events: none; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--warm); border-top: 1px solid var(--border-md);
+      padding: 60px 36px;
+    }
+    .footer-inner {
+      max-width: 1240px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 28px;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem; font-weight: 600; letter-spacing: 0.1em; color: var(--ink);
+    }
+    .footer-logo em { color: var(--gold); font-style: normal; }
+    .footer-band {
+      font-size: 0.68rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--ink-mute); margin-top: 6px;
+    }
+    .footer-info { text-align: right; }
+    .footer-info p {
+      font-size: 0.67rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--ink-mute); line-height: 2.1;
+    }
+    .footer-info a { color: var(--gold); text-decoration: none; }
+    .footer-info a:hover { text-decoration: underline; }
+    @media (max-width: 600px) { .footer-inner { flex-direction: column; align-items: flex-start; } .footer-info { text-align: left; } }
+
+    /* ─── LIGHTBOX ─── */
+    .lightbox {
+      display: none; position: fixed; inset: 0;
+      background: rgba(28,26,23,0.92); z-index: 10000;
+      align-items: center; justify-content: center;
+      padding: 24px; cursor: zoom-out; backdrop-filter: blur(5px);
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 100%; max-height: 90vh; object-fit: contain; box-shadow: var(--shadow-lg); cursor: default; }
+    .lightbox-close {
+      position: fixed; top: 20px; right: 24px;
+      font-size: 0.6rem; letter-spacing: 0.2em; color: var(--cream);
+      cursor: pointer; background: none;
+      border: 1px solid rgba(247,244,238,0.28); padding: 8px 16px;
+      text-transform: uppercase; font-family: 'DM Sans', sans-serif; transition: all 0.2s;
+    }
+    .lightbox-close:hover { background: rgba(247,244,238,0.1); }
+    .lightbox-caption {
+      position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+      font-size: 0.58rem; letter-spacing: 0.22em; color: var(--stone);
+      text-transform: uppercase; white-space: nowrap;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    .mobile-br { display: none; }
+    @media (max-width: 600px) { .mobile-br { display: block; } }
+    @keyframes fadeSlideDown { from { opacity: 0; transform: translateY(-18px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeSlideUp   { from { opacity: 0; transform: translateY(28px);  } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn        { from { opacity: 0; } to { opacity: 1; } }
+
+    /* ─── SCROLL REVEALS ─── */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.78s ease, transform 0.78s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.22s; }
+    .reveal-delay-3 { transition-delay: 0.34s; }
+
+    /* ─── RESPONSIVE — TABLET ─── */
+    @media (max-width: 880px) {
+      .press { padding: 80px 28px; }
+      .press-left { position: static; }
+      .album-hero { padding: 80px 28px; }
+      .album-hero-inner { gap: 52px; }
+      .tracklist-section { padding: 80px 28px; }
+      .gallery-section { padding: 80px 28px; }
+      .trilogy-section { padding: 80px 28px; }
+      .induction { padding: 100px 28px; }
+    }
+
+    /* ══════════════════════════════════════════
+       MOBILE — TRUE CENTERED EXPERIENCE ≤ 600px
+    ══════════════════════════════════════════ */
+    @media (max-width: 600px) {
+
+      /* ── Masthead ── */
+      .masthead-inner {
+        padding: 12px 20px;
+        height: auto;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        text-align: center;
+      }
+      .masthead-left { flex-direction: column; align-items: center; gap: 4px; }
+      .masthead-pipe { display: none; }
+      .masthead-wordmark { font-size: 1.3rem; letter-spacing: 0.14em; }
+      .masthead-sub { font-size: 0.58rem; letter-spacing: 0.1em; }
+      .masthead-badge { display: none; }
+
+      /* ── Hero ── */
+      .hero {
+        padding: 56px 22px 76px;
+        min-height: auto;
+        text-align: center;
+      }
+      .hero-eyebrow {
+        font-size: 0.58rem;
+        letter-spacing: 0.18em;
+        text-align: center;
+      }
+      .hero-title {
+        font-size: clamp(4.8rem, 24vw, 7.5rem);
+        text-align: center;
+      }
+      .hero-subtitle {
+        font-size: 1.2rem;
+        text-align: center;
+      }
+      .hero-desc {
+        font-size: 1.08rem;
+        text-align: center;
+        max-width: 100%;
+      }
+      .hero-meta {
+        font-size: 0.6rem;
+        letter-spacing: 0.12em;
+        text-align: center;
+        line-height: 2;
+        /* break the dots onto own lines on tiny screens */
+      }
+      .hero-cta-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+      }
+      .btn-gold, .btn-outline, .btn-ink {
+        width: 100%;
+        max-width: 340px;
+        justify-content: center;
+        text-align: center;
+      }
+
+      /* ── Section shared — always center on mobile ── */
+      .section-eyebrow {
+        justify-content: center;
+        text-align: center;
+      }
+      .section-eyebrow::before { display: none; }
+      .section-title {
+        font-size: clamp(2.2rem, 10vw, 3rem);
+        text-align: center;
+      }
+
+      /* ── Press Release ── */
+      .press { padding: 64px 22px 72px; }
+      .press-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 44px;
+        text-align: center;
+      }
+      .press-left {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+      .hall-seal {
+        width: 140px; height: 140px;
+        margin: 0 auto 32px;
+      }
+      .hall-seal .seal-no { font-size: 2.6rem; }
+      /* Stats as centered pills on mobile */
+      .press-stat {
+        text-align: center;
+        padding: 12px 0;
+        width: 100%;
+      }
+      .press-stat .stat-label { text-align: center; }
+      .press-stat .stat-value { text-align: center; }
+      .press-body {
+        text-align: left;
+        width: 100%;
+      }
+      .press-body .section-eyebrow {
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .press-body .section-eyebrow::before { display: none; }
+      .press-body .section-title { text-align: center; }
+      .press-body p { font-size: 1.06rem; line-height: 1.85; }
+      .press-pull-quote { padding: 16px 20px; margin: 28px 0; }
+      .press-pull-quote p { font-size: 1.08rem; }
+
+      /* ── Album Hero ── */
+      .album-hero { padding: 64px 22px; }
+      .album-hero-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 48px;
+        text-align: center;
+      }
+      .album-art-frame { width: min(320px, 86vw); margin: 0 auto; }
+      .album-art-frame::before { inset: -10px; }
+      .album-art-num {
+        top: -32px; right: 0;
+        font-size: 0.54rem;
+      }
+      .album-info {
+        text-align: center;
+        width: 100%;
+      }
+      .album-info .album-num {
+        text-align: center;
+        font-size: 0.56rem;
+        letter-spacing: 0.14em;
+      }
+      .album-info h2 {
+        font-size: clamp(2.2rem, 10vw, 3rem);
+        text-align: center;
+      }
+      .album-info .album-year {
+        text-align: center;
+        font-size: 0.65rem;
+        letter-spacing: 0.1em;
+        line-height: 2;
+      }
+      .album-info p {
+        font-size: 1.06rem;
+        text-align: left;
+        line-height: 1.85;
+      }
+      .album-info > div[style],
+      .album-cta-row {
+        justify-content: center !important;
+      }
+
+      /* ── Tracklist ── */
+      .tracklist-section { padding: 64px 22px; }
+      .tracklist-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        margin-bottom: 40px;
+      }
+      .tracklist-header > div { text-align: center; }
+      .tracklist-header .section-eyebrow { justify-content: center; }
+      .tracklist-header .section-eyebrow::before { display: none; }
+      .tracks-grid { grid-template-columns: 1fr; }
+      .track-info { padding: 14px 16px; }
+      .track-name { font-size: 1.02rem; }
+
+      /* ── Gallery ── */
+      .gallery-section { padding: 64px 22px; }
+      .gallery-inner > .reveal { text-align: center; }
+      .gallery-inner .section-eyebrow { justify-content: center; }
+      .gallery-inner .section-eyebrow::before { display: none; }
+      .gallery-inner > .reveal > p { text-align: center; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; margin-top: 36px; }
+
+      /* ── Induction ── */
+      .induction { padding: 88px 22px; text-align: center; }
+      .induction-label { font-size: 0.6rem; letter-spacing: 0.2em; }
+      .induction-number { font-size: clamp(6rem, 30vw, 11rem); }
+      .induction-copy { font-size: 1.08rem; margin-top: 22px; }
+
+      /* ── Trilogy ── */
+      .trilogy-section { padding: 64px 22px; text-align: center; }
+      .trilogy-section > .reveal { text-align: center; }
+      .trilogy-section .section-eyebrow { justify-content: center; }
+      .trilogy-section .section-eyebrow::before { display: none; }
+      .trilogy-section > .reveal > p { text-align: center !important; }
+      .albums-row { grid-template-columns: 1fr; gap: 20px; margin-top: 40px; }
+      .album-card-title { font-size: 1.4rem; }
+
+      /* ── Footer ── */
+      footer { padding: 52px 22px; }
+      .footer-inner {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        text-align: center;
+      }
+      .footer-logo { font-size: 1.5rem; text-align: center; }
+      .footer-band { text-align: center; font-size: 0.6rem; }
+      .footer-info { text-align: center; }
+      .footer-info p { text-align: center; }
+
+      /* ── Lightbox ── */
+      .lightbox { padding: 16px; }
+      .lightbox-close { top: 12px; right: 14px; font-size: 0.55rem; }
+      .lightbox-caption {
+        font-size: 0.52rem;
+        white-space: normal;
+        text-align: center;
+        width: 88%;
+      }
+    }
+
+    /* ── Extra small ≤ 390px ── */
+    @media (max-width: 390px) {
+      .hero-title { font-size: 4.2rem; }
+      .masthead-sub { font-size: 0.52rem; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .album-art-frame { width: 92vw; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ MASTHEAD ═══ -->
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="masthead-left">
+        <div class="masthead-wordmark"><em>JBRT</em></div>
+        <div class="masthead-pipe"></div>
+        <div class="masthead-sub">The Wildstarfires &nbsp;·&nbsp; New York &nbsp;·&nbsp; Est. 1995</div>
+      </div>
+      <div class="masthead-badge">MetaEarth Hall of Fame — Inductee No. 1</div>
+    </div>
+  </header>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+
+    <div class="hero-rule" style="margin-bottom:38px; animation: fadeIn 1s 0.1s ease both;"></div>
+
+    <p class="hero-eyebrow">JIMMIEBEETLES ROCK THEATER presents</p>
+
+    <h1 class="hero-title">JBRT</h1>
+
+    <p class="hero-subtitle">The Wildstarfires</p>
+
+    <div class="hero-divider">
+      <span class="hero-divider-glyph">✦</span>
+    </div>
+
+    <p class="hero-desc">
+      The first band in history inducted into the MetaEarth Music Hall of Fame —
+      a living archive of raw performance, grit, and visionary sound captured across three landmark albums.
+    </p>
+
+    <p class="hero-meta">New York, New York &nbsp;·&nbsp; Est. 1995<br class="mobile-br"> &nbsp;·&nbsp; Inductee No. 1 &nbsp;·&nbsp; 2026</p>
+
+    <div class="hero-cta-row">
+      <a href="https://thewildstarfires.bandcamp.com" target="_blank" rel="noopener" class="btn-gold">
+        ▶ &nbsp; Stream &amp; Purchase on Bandcamp
+      </a>
+      <a href="#tracklist" class="btn-outline">
+        ↓ &nbsp; Explore Album No. 1
+      </a>
+    </div>
+
+    <div class="hero-rule" style="margin-top:54px; animation: fadeIn 1s 1.2s ease both;"></div>
+  </section>
+
+  <!-- ═══ MARQUEE ═══ -->
+  <div class="announce-band" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-item">
+        <span>MetaEarth Music Hall of Fame</span><span class="marquee-sep">·</span>
+        <span>Inductee No. 1</span><span class="marquee-sep">·</span>
+        <span>JBRT &amp; The Wildstarfires</span><span class="marquee-sep">·</span>
+        <span>Album 1 of 3 — Available Now</span><span class="marquee-sep">·</span>
+        <span>Best of The Wildstarfires Live</span><span class="marquee-sep">·</span>
+        <span>Purchase on Bandcamp</span><span class="marquee-sep">·</span>
+      </div>
+      <div class="marquee-item" aria-hidden="true">
+        <span>MetaEarth Music Hall of Fame</span><span class="marquee-sep">·</span>
+        <span>Inductee No. 1</span><span class="marquee-sep">·</span>
+        <span>JBRT &amp; The Wildstarfires</span><span class="marquee-sep">·</span>
+        <span>Album 1 of 3 — Available Now</span><span class="marquee-sep">·</span>
+        <span>Best of The Wildstarfires Live</span><span class="marquee-sep">·</span>
+        <span>Purchase on Bandcamp</span><span class="marquee-sep">·</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ PRESS RELEASE ═══ -->
+  <section>
+    <div class="press">
+      <div class="press-inner">
+
+        <div class="press-left reveal">
+          <div class="hall-seal">
+            <span class="seal-year">2026</span>
+            <span class="seal-no">#1</span>
+            <span class="seal-text">Inaugural<br>Inductee</span>
+          </div>
+          <div class="press-stat">
+            <div class="stat-label">Band</div>
+            <div class="stat-value">The Wildstarfires</div>
+          </div>
+          <div class="press-stat">
+            <div class="stat-label">Project</div>
+            <div class="stat-value">JIMMIEBEETLES ROCK THEATER</div>
+          </div>
+          <div class="press-stat">
+            <div class="stat-label">Based In</div>
+            <div class="stat-value">New York, New York</div>
+          </div>
+          <div class="press-stat">
+            <div class="stat-label">Albums</div>
+            <div class="stat-value">3 (Vol. I Available Now)</div>
+          </div>
+          <div class="press-stat">
+            <div class="stat-label">Available At</div>
+            <div class="stat-value">
+              <a href="https://thewildstarfires.bandcamp.com" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;">thewildstarfires.bandcamp.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="press-body reveal reveal-delay-2">
+          <div class="section-eyebrow">Press Release</div>
+          <h2 class="section-title" style="margin-bottom:36px;">History<br>is Made</h2>
+
+          <p>
+            <strong>New York, NY — 2026.</strong> The MetaEarth Music Hall of Fame announces its very first inductee:
+            <strong>JBRT — JIMMIEBEETLES ROCK THEATER</strong>, the creative project behind New York hard rock ensemble
+            <strong>The Wildstarfires</strong>. This is not merely a milestone — it is the moment an institution is born.
+          </p>
+
+          <div class="press-pull-quote">
+            <p>"The Wildstarfires is both an orphanage and a think tank of experienced Hard Rock musicians — focused on sound, on truth, on performance."</p>
+          </div>
+
+          <p>
+            Formed in the crucible of New York City, The Wildstarfires captured decades of raw, visceral, <em>live</em>
+            performance on tape — and that performance has never sounded more alive than it does right now.
+            <strong>Best of The Wildstarfires Live</strong> is Album No. 1 of 3 in a landmark trilogy being released
+            through Bandcamp, giving fans worldwide direct access to purchase and stream this extraordinary catalog.
+          </p>
+
+          <p>
+            Two additional volumes — <strong>Best of The Wildstarfires Vol. II</strong> and <strong>Vol. III</strong> —
+            are coming soon, completing one of the most ambitious archival releases in independent rock history.
+            Be among the first to own this music before the world catches up.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ALBUM HERO ═══ -->
+  <section class="album-hero">
+    <div class="album-hero-inner">
+
+      <div class="album-art-frame reveal">
+        <span class="album-art-num">Album 1 of 3</span>
+        <img
+          src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_overall/best_of_the_wild_starfires_lives.png"
+          alt="Best of The Wildstarfires Live — Album Cover"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="album-info reveal reveal-delay-2">
+        <div class="album-num">★ &nbsp; MetaEarth Music Hall of Fame &nbsp;·&nbsp; Inaugural Release</div>
+        <h2>Best of The<br>Wildstarfires<br>Live</h2>
+        <p class="album-year">The Wildstarfires &nbsp;·&nbsp; New York &nbsp;·&nbsp; 12 Tracks</p>
+        <p>
+          Twelve live performances. Twelve windows into the soul of a band that has played hard, bled harder,
+          and refused to be forgotten. From the gritty streets of Bleecker St. 1995 to the raw thunder of
+          <em>Can't Stop This Train</em> — this is rock music the way it was meant to be heard.
+        </p>
+        <p>
+          Available as a digital album or physical Compact Disc, with unlimited streaming and 24-bit/48kHz
+          high-quality download. Every purchase goes directly to the artists.
+        </p>
+        <div class="album-cta-row" style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="https://thewildstarfires.bandcamp.com" target="_blank" rel="noopener" class="btn-gold">
+            ▶ &nbsp; Buy on Bandcamp — $8 Digital / $10 CD
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ TRACKLIST ═══ -->
+  <section id="tracklist">
+    <div class="tracklist-section">
+      <div class="tracklist-header reveal">
+        <div>
+          <div class="section-eyebrow">Full Tracklist</div>
+          <h2 class="section-title">12 Songs.<br>One Night.</h2>
+        </div>
+        <a href="https://thewildstarfires.bandcamp.com" target="_blank" rel="noopener" class="btn-outline">
+          Buy Full Album →
+        </a>
+      </div>
+
+      <div class="tracks-grid">
+
+        <div class="track-card reveal">
+          <div class="track-img-wrap" onclick="openLightbox(this)" data-caption="01 — Bleeker St. 1995 / Not From Here">
+            <img class="track-screenshot" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_songs/1_bleeker_st_1995_not_from_here.png" alt="Bleeker St 1995 / Not From Here" loading="lazy" />
+            <div class="track-img-overlay"><span>View Full Size</span></div>
+          </div>
+          <div class="track-info">
+            <span class="track-num">01</span>
+            <div class="track-details">
+              <div class="track-name">Bleeker St. 1995<br><span style="color:var(--ink-mute);font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:400;">/ Not From Here</span></div>
+            </div>
+            <img class="track-qr" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/qr_codes/1_bleeker_st_1995_not_from_here.png" alt="QR Code" loading="lazy" />
+          </div>
+          <a href="https://thewildstarfires.bandcamp.com/track/bleeker-st-1995-not-from-here" target="_blank" rel="noopener" class="track-buy">▶ &nbsp; Listen &amp; Buy on Bandcamp</a>
+        </div>
+
+        <div class="track-card reveal reveal-delay-1">
+          <div class="track-img-wrap" onclick="openLightbox(this)" data-caption="02 — Electric Ark">
+            <img class="track-screenshot" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_songs/2_electric_ark.png" alt="Electric Ark" loading="lazy" />
+            <div class="track-img-overlay"><span>View Full Size</span></div>
+          </div>
+          <div class="track-info">
+            <span class="track-num">02</span>
+            <div class="track-details"><div class="track-name">Electric Ark</div></div>
+            <img class="track-qr" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/qr_codes/2_electric_ark.png" alt="QR Code" loading="lazy" />
+          </div>
+          <a href="https://thewildstarfires.bandcamp.com/track/electric-ark" target="_blank" rel="noopener" class="track-buy">▶ &nbsp; Listen &amp; Buy on Bandcamp</a>
+        </div>
+
+        <div class="track-card reveal reveal-delay-2">
+          <div class="track-img-wrap" onclick="openLightbox(this)" data-caption="03 — Falls The Time">
+            <img class="track-screenshot" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_songs/3_falls_the_time.png" alt="Falls The Time" loading="lazy" />
+            <div class="track-img-overlay"><span>View Full Size</span></div>
+          </div>
+          <div class="track-info">
+            <span class="track-num">03</span>
+            <div class="track-details"><div class="track-name">Falls The Time</div></div>
+            <img class="track-qr" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/qr_codes/3_falls_the_time.png" alt="QR Code" loading="lazy" />
+          </div>
+          <a href="https://thewildstarfires.bandcamp.com/track/falls-the-time-3" target="_blank" rel="noopener" class="track-buy">▶ &nbsp; Listen &amp; Buy on Bandcamp</a>
+        </div>
+
+        <div class="track-card reveal">
+          <div class="track-img-wrap" onclick="openLightbox(this)" data-caption="04 — This Homeless Thing">
+            <img class="track-screenshot" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_songs/4_this_homeless_thing.png" alt="This Homeless Thing" loading="lazy" />
+            <div class="track-img-overlay"><span>View Full Size</span></div>
+          </div>
+          <div class="track-info">
+            <span class="track-num">04</span>
+            <div class="track-details"><div class="track-name">This Homeless Thing</div></div>
+            <img class="track-qr" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/qr_codes/4_this_homeless_thing.png" alt="QR Code" loading="lazy" />
+          </div>
+          <a href="https://thewildstarfires.bandcamp.com/track/this-homeless-thing-3" target="_blank" rel="noopener" class="track-buy">▶ &nbsp; Listen &amp; Buy on Bandcamp</a>
+        </div>
+
+        <div class="track-card reveal reveal-delay-1">
+          <div class="track-img-wrap" onclick="openLightbox(this)" data-caption="05 — Shot">
+            <img class="track-screenshot" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_songs/5_shot.png" alt="Shot" loading="lazy" />
+            <div class="track-img-overlay"><span>View Full Size</span></div>
+          </div>
+          <div class="track-info">
+            <span class="track-num">05</span>
+            <div class="track-details"><div class="track-name">Shot</div></div>
+            <img class="track-qr" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/qr_codes/5_shot.png" alt="QR Code" loading="lazy" />
+          </div>
+          <a href="https://thewildstarfires.bandcamp.com/track/shot-2" target="_blank" rel="noopener" class="track-buy">▶ &nbsp; Listen &amp; Buy on Bandcamp</a>
+        </div>
+
+        <div class="track-card reveal reveal-delay-2">
+          <div class="track-img-wrap" onclick="openLightbox(this)" data-caption="06 — Only Nina Knows">
+            <img class="track-screenshot" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_songs/6_only_nina_knows.png" alt="Only Nina Knows" loading="lazy" />
+            <div class="track-img-overlay"><span>View Full Size</span></div>
+          </div>
+          <div class="track-info">
+            <span class="track-num">06</span>
+            <div class="track-details"><div class="track-name">Only Nina Knows</div></div>
+            <img class="track-qr" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/qr_codes/6_only_nina_knows.png" alt="QR Code" loading="lazy" />
+          </div>
+          <a href="https://thewildstarfires.bandcamp.com/track/only-nina-knows-2" target="_blank" rel="noopener" class="track-buy">▶ &nbsp; Listen &amp; Buy on Bandcamp</a>
+        </div>
+
+        <div class="track-card reveal">
+          <div class="track-img-wrap" onclick="openLightbox(this)" data-caption="07 — Watdafkryinoutloud">
+            <img class="track-screenshot" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_songs/7_watdafkryinoutloud.png" alt="Watdafkryinoutloud" loading="lazy" />
+            <div class="track-img-overlay"><span>View Full Size</span></div>
+          </div>
+          <div class="track-info">
+            <span class="track-num">07</span>
+            <div class="track-details"><div class="track-name">Watdafkryinoutloud</div></div>
+            <img class="track-qr" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/qr_codes/7_watdafkryinoutloud.png" alt="QR Code" loading="lazy" />
+          </div>
+          <a href="https://thewildstarfires.bandcamp.com/track/watdafkryinoutloud" target="_blank" rel="noopener" class="track-buy">▶ &nbsp; Listen &amp; Buy on Bandcamp</a>
+        </div>
+
+        <div class="track-card reveal reveal-delay-1">
+          <div class="track-img-wrap" onclick="openLightbox(this)" data-caption="08 — Can't Stop This Train">
+            <img class="track-screenshot" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_songs/8_cant_stop_this_train.png" alt="Can't Stop This Train" loading="lazy" />
+            <div class="track-img-overlay"><span>View Full Size</span></div>
+          </div>
+          <div class="track-info">
+            <span class="track-num">08</span>
+            <div class="track-details"><div class="track-name">Can't Stop This Train</div></div>
+            <img class="track-qr" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/qr_codes/8_cant_stop_this_train.png" alt="QR Code" loading="lazy" />
+          </div>
+          <a href="https://thewildstarfires.bandcamp.com/track/cant-stop-this-train-2" target="_blank" rel="noopener" class="track-buy">▶ &nbsp; Listen &amp; Buy on Bandcamp</a>
+        </div>
+
+        <div class="track-card reveal reveal-delay-2">
+          <div class="track-img-wrap" onclick="openLightbox(this)" data-caption="09 — 11th St.">
+            <img class="track-screenshot" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_songs/9_11th_st.png" alt="11th St." loading="lazy" />
+            <div class="track-img-overlay"><span>View Full Size</span></div>
+          </div>
+          <div class="track-info">
+            <span class="track-num">09</span>
+            <div class="track-details"><div class="track-name">11th St.</div></div>
+            <img class="track-qr" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/qr_codes/9_11th_st.png" alt="QR Code" loading="lazy" />
+          </div>
+          <a href="https://thewildstarfires.bandcamp.com/track/11th-st-2" target="_blank" rel="noopener" class="track-buy">▶ &nbsp; Listen &amp; Buy on Bandcamp</a>
+        </div>
+
+        <div class="track-card reveal">
+          <div class="track-img-wrap" onclick="openLightbox(this)" data-caption="10 — I'll Stand There">
+            <img class="track-screenshot" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_songs/10_i%27ll_stand_there.png" alt="I'll Stand There" loading="lazy" />
+            <div class="track-img-overlay"><span>View Full Size</span></div>
+          </div>
+          <div class="track-info">
+            <span class="track-num">10</span>
+            <div class="track-details"><div class="track-name">I'll Stand There</div></div>
+            <img class="track-qr" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/qr_codes/10_i%27ll_stand_there.png" alt="QR Code" loading="lazy" />
+          </div>
+          <a href="https://thewildstarfires.bandcamp.com/track/ill-stand-there-2" target="_blank" rel="noopener" class="track-buy">▶ &nbsp; Listen &amp; Buy on Bandcamp</a>
+        </div>
+
+        <div class="track-card reveal reveal-delay-1">
+          <div class="track-img-wrap" onclick="openLightbox(this)" data-caption="11 — Notes from Underground / Not From Here">
+            <img class="track-screenshot" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_songs/11_notes_from_underground_not_from_here.png" alt="Notes from Underground / Not From Here" loading="lazy" />
+            <div class="track-img-overlay"><span>View Full Size</span></div>
+          </div>
+          <div class="track-info">
+            <span class="track-num">11</span>
+            <div class="track-details">
+              <div class="track-name">Notes from Underground<br><span style="color:var(--ink-mute);font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:400;">/ Not From Here</span></div>
+            </div>
+            <img class="track-qr" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/qr_codes/11_notes_from_underground_not_from_here.png" alt="QR Code" loading="lazy" />
+          </div>
+          <a href="https://thewildstarfires.bandcamp.com/track/notes-from-the-underground-not-from-here" target="_blank" rel="noopener" class="track-buy">▶ &nbsp; Listen &amp; Buy on Bandcamp</a>
+        </div>
+
+        <div class="track-card reveal reveal-delay-2">
+          <div class="track-img-wrap" onclick="openLightbox(this)" data-caption="12 — Good Old Bunky / Beginning the End">
+            <img class="track-screenshot" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_songs/12_goog_old_bunky_beginning_the_end.png" alt="Good Old Bunky / Beginning the End" loading="lazy" />
+            <div class="track-img-overlay"><span>View Full Size</span></div>
+          </div>
+          <div class="track-info">
+            <span class="track-num">12</span>
+            <div class="track-details">
+              <div class="track-name">Good Old Bunky<br><span style="color:var(--ink-mute);font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:400;">/ Beginning the End</span></div>
+            </div>
+            <img class="track-qr" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/qr_codes/12_goog_old_bunky_beginning_the_end.png" alt="QR Code" loading="lazy" />
+          </div>
+          <a href="https://thewildstarfires.bandcamp.com/track/good-old-bunky-beginning-the-end" target="_blank" rel="noopener" class="track-buy">▶ &nbsp; Listen &amp; Buy on Bandcamp</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ GALLERY ═══ -->
+  <section class="gallery-section">
+    <div class="gallery-inner">
+      <div class="reveal">
+        <div class="section-eyebrow">Live Moments</div>
+        <h2 class="section-title">The Performances</h2>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item reveal" onclick="openGalleryLightbox(this)" data-caption="Moment of Passion">
+          <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_overall/moment_of_passion.png" alt="Moment of Passion" loading="lazy" />
+          <div class="gallery-item-overlay"><span>View Full Size</span></div>
+          <div class="gallery-item-cap">Moment of Passion</div>
+        </div>
+        <div class="gallery-item reveal reveal-delay-1" onclick="openGalleryLightbox(this)" data-caption="Falls the Time">
+          <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_overall/falls_the_time.png" alt="Falls the Time" loading="lazy" />
+          <div class="gallery-item-overlay"><span>View Full Size</span></div>
+          <div class="gallery-item-cap">Falls the Time</div>
+        </div>
+        <div class="gallery-item reveal reveal-delay-2" onclick="openGalleryLightbox(this)" data-caption="Wutdafkryingoutloud">
+          <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_overall/wutdafkryingoutloud.png" alt="Wutdafkryingoutloud" loading="lazy" />
+          <div class="gallery-item-overlay"><span>View Full Size</span></div>
+          <div class="gallery-item-cap">Wutdafkryingoutloud</div>
+        </div>
+        <div class="gallery-item reveal" onclick="openGalleryLightbox(this)" data-caption="Notes from Underground">
+          <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_overall/notes_from_underground.png" alt="Notes from Underground" loading="lazy" />
+          <div class="gallery-item-overlay"><span>View Full Size</span></div>
+          <div class="gallery-item-cap">Notes from Underground</div>
+        </div>
+        <div class="gallery-item reveal reveal-delay-1" onclick="openGalleryLightbox(this)" data-caption="Good Old Bunky — Coda">
+          <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_overall/good_old_bunky_coda.png" alt="Good Old Bunky Coda" loading="lazy" />
+          <div class="gallery-item-overlay"><span>View Full Size</span></div>
+          <div class="gallery-item-cap">Good Old Bunky — Coda</div>
+        </div>
+        <div class="gallery-item reveal reveal-delay-2" onclick="openGalleryLightbox(this)" data-caption="Relic of Coney Island">
+          <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_overall/relic_of_coney_island.png" alt="Relic of Coney Island" loading="lazy" />
+          <div class="gallery-item-overlay"><span>View Full Size</span></div>
+          <div class="gallery-item-cap">Relic of Coney Island</div>
+        </div>
+        <div class="gallery-item reveal" onclick="openGalleryLightbox(this)" data-caption="Far Below Zero — Jam Session">
+          <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_overall/far_below_zero_jam_session.png" alt="Far Below Zero Jam Session" loading="lazy" />
+          <div class="gallery-item-overlay"><span>View Full Size</span></div>
+          <div class="gallery-item-cap">Far Below Zero — Jam Session</div>
+        </div>
+        <div class="gallery-item reveal reveal-delay-1" onclick="openGalleryLightbox(this)" data-caption="Community">
+          <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_overall/community.png" alt="Community" loading="lazy" />
+          <div class="gallery-item-overlay"><span>View Full Size</span></div>
+          <div class="gallery-item-cap">Community</div>
+        </div>
+        <div class="gallery-item reveal reveal-delay-2" onclick="openGalleryLightbox(this)" data-caption="Merchandise">
+          <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_overall/merchandise.png" alt="Merch" loading="lazy" />
+          <div class="gallery-item-overlay"><span>View Full Size</span></div>
+          <div class="gallery-item-cap">Merchandise</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ INDUCTION ═══ -->
+  <section class="induction">
+    <div class="induction-inner">
+      <p class="induction-label">MetaEarth Music Hall of Fame &nbsp;·&nbsp; Inductee Number</p>
+      <div class="induction-number">ONE</div>
+      <p class="induction-copy">
+        Every hall of fame has a first. Every legend begins somewhere.
+        JBRT is where this one begins — and the world is only just finding out.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ TRILOGY ═══ -->
+  <section>
+    <div class="trilogy-section">
+      <div class="reveal">
+        <div class="section-eyebrow">The Complete Trilogy</div>
+        <h2 class="section-title">Three Albums.<br>One Legacy.</h2>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.22rem;color:var(--ink-mid);max-width:600px;line-height:1.88;margin-top:22px;">
+          Best of The Wildstarfires Live is just the beginning. Two more landmark volumes are coming — collecting
+          the full breadth of JBRT's extraordinary catalog. Follow on Bandcamp now so you don't miss a single release.
+        </p>
+      </div>
+
+      <div class="albums-row">
+
+        <div class="album-card reveal">
+          <div class="album-card-img-wrap" onclick="openAlbumLightbox(this)" data-caption="Best of The Wildstarfires Live" data-src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/images/best_of_the_wildstarfires_live_pic.png">
+            <img class="album-card-img" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/images/best_of_the_wildstarfires_live_pic.png" alt="Best of The Wildstarfires Live" loading="lazy" />
+            <div class="album-card-img-overlay"><span>View Full Size</span></div>
+          </div>
+          <div class="album-card-body">
+            <div class="album-card-status status-live">★ &nbsp; Available Now</div>
+            <div class="album-card-title">Best of The Wildstarfires Live</div>
+            <div class="album-card-num">Album No. 1 of 3 &nbsp;·&nbsp; 12 Tracks</div>
+            <a href="https://thewildstarfires.bandcamp.com/album/best-of-the-wildstarfires-live" target="_blank" rel="noopener" class="album-card-cta">Stream &amp; Purchase on Bandcamp →</a>
+          </div>
+        </div>
+
+        <div class="album-card reveal reveal-delay-1">
+          <div class="album-card-img-wrap" onclick="openAlbumLightbox(this)" data-caption="Best of The Wildstarfires Vol. II" data-src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/images/best_of_the_wildstarfires_vol_ii_pic.png">
+            <img class="album-card-img" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/images/best_of_the_wildstarfires_vol_ii_pic.png" alt="Best of The Wildstarfires Vol. II" loading="lazy" />
+            <div class="album-card-img-overlay"><span>View Full Size</span></div>
+          </div>
+          <div class="album-card-body">
+            <div class="album-card-status status-soon">◉ &nbsp; Coming Soon — May 2026</div>
+            <div class="album-card-title">Best of The Wildstarfires Vol. II</div>
+            <div class="album-card-num">Album No. 2 of 3</div>
+            <a href="https://thewildstarfires.bandcamp.com/album/best-of-the-wildstarfires-vol-2" target="_blank" rel="noopener" class="album-card-cta">Follow on Bandcamp for Updates →</a>
+          </div>
+        </div>
+
+        <div class="album-card reveal reveal-delay-2">
+          <div class="album-card-img-wrap" onclick="openAlbumLightbox(this)" data-caption="Best of The Wildstarfires Vol. III" data-src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/images/best_of_the_wildstarfires_vol_iii_pic.png">
+            <img class="album-card-img" src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/images/best_of_the_wildstarfires_vol_iii_pic.png" alt="Best of The Wildstarfires Vol. III" loading="lazy" />
+            <div class="album-card-img-overlay"><span>View Full Size</span></div>
+          </div>
+          <div class="album-card-body">
+            <div class="album-card-status status-soon">◉ &nbsp; Coming Soon — 2026</div>
+            <div class="album-card-title">Best of The Wildstarfires Vol. III</div>
+            <div class="album-card-num">Album No. 3 of 3</div>
+            <a href="https://thewildstarfires.bandcamp.com/album/the-best-of-the-wildstarfires-vol-iii" target="_blank" rel="noopener" class="album-card-cta">Follow on Bandcamp for Updates →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo"><em>JBRT</em> &nbsp;·&nbsp; WSF</div>
+        <div class="footer-band">JIMMIEBEETLES ROCK THEATER &nbsp;·&nbsp; The Wildstarfires &nbsp;·&nbsp; New York &nbsp;·&nbsp; Est. 1995</div>
+      </div>
+      <div class="footer-info">
+        <p>MetaEarth Music Hall of Fame — Inductee No. 1</p>
+        <p>All music available at <a href="https://thewildstarfires.bandcamp.com" target="_blank" rel="noopener">thewildstarfires.bandcamp.com</a></p>
+        <p>&copy; 2026 JBRT / The Wildstarfires. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&#x2715; &nbsp; Close</button>
+    <img id="lightbox-img" src="" alt="" onclick="event.stopPropagation()" />
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+
+    function openAlbumLightbox(wrap) {
+      const src = wrap.getAttribute('data-src') || wrap.querySelector('img').src;
+      const caption = wrap.getAttribute('data-caption') || '';
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox-img').alt = caption;
+      document.getElementById('lightbox-caption').textContent = caption;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function openLightbox(wrap) {
+      const img = wrap.querySelector('img');
+      const caption = wrap.getAttribute('data-caption') || '';
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox-img').alt = img.alt;
+      document.getElementById('lightbox-caption').textContent = caption;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function openGalleryLightbox(item) {
+      const img = item.querySelector('img');
+      const caption = item.getAttribute('data-caption') || img.alt || '';
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox-img').alt = img.alt;
+      document.getElementById('lightbox-caption').textContent = caption;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  </script>
+</body>
+</html>
