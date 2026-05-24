@@ -32,7 +32,7 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; overflow-x: hidden; }
+    html { scroll-behavior: smooth; }
 
     body {
       background: var(--cream);
@@ -201,7 +201,7 @@
     .announce-band {
       background: var(--ink); padding: 12px 0;
       overflow: hidden; position: relative; z-index: 5;
-      width: 100%; max-width: 100vw;
+      width: 100%; max-width: 100%; clip-path: inset(0);
     }
     .marquee-track {
       display: flex; animation: marquee 26s linear infinite; white-space: nowrap;
@@ -434,12 +434,12 @@
     }
     @media (max-width: 720px) { .gallery-grid { grid-template-columns: 1fr 1fr; } }
 
-    .gallery-item { overflow: hidden; position: relative; aspect-ratio: 4/3; background: var(--warm); cursor: zoom-in; }
+    .gallery-item { overflow: hidden; position: relative; background: var(--ink); cursor: zoom-in; }
     .gallery-item img {
-      width: 100%; height: 100%; object-fit: cover; display: block;
+      width: 100%; height: auto; object-fit: contain; display: block;
       filter: saturate(0.82) contrast(1.06); transition: all 0.55s;
     }
-    .gallery-item:hover img { filter: saturate(1.1) contrast(1.06); transform: scale(1.04); }
+    .gallery-item:hover img { filter: saturate(1.1) contrast(1.06); transform: scale(1.02); }
     .gallery-item-overlay {
       position: absolute; inset: 0; background: rgba(28,26,23,0);
       display: flex; align-items: center; justify-content: center;
@@ -462,6 +462,27 @@
       opacity: 0; transition: opacity 0.3s;
     }
     .gallery-item:hover .gallery-item-cap { opacity: 1; }
+
+    /* ─── GALLERY HERO ROW ─── */
+    .gallery-hero-row {
+      border: 1px solid var(--border);
+      background: var(--border);
+      overflow: hidden;
+    }
+    .gallery-item-hero {
+      width: 100%; display: block;
+      position: relative; overflow: hidden;
+      cursor: zoom-in;
+    }
+    .gallery-item-hero img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      filter: saturate(0.85) contrast(1.04);
+      transition: filter 0.4s, transform 0.55s;
+    }
+    .gallery-item-hero:hover img { filter: saturate(1.06) contrast(1.06); transform: scale(1.02); }
+    .gallery-item-hero:hover .gallery-item-overlay { background: rgba(28,26,23,0.25); }
+    .gallery-item-hero:hover .gallery-item-overlay span { opacity: 1; }
+    .gallery-item-hero:hover .gallery-item-cap { opacity: 1; }
 
     /* ─── INDUCTION ─── */
     .induction {
@@ -1229,58 +1250,63 @@
 
   <!-- ═══ GALLERY ═══ -->
   <section class="gallery-section">
-    <div class="gallery-inner">
+
+    <!-- HEADING -->
+    <div style="max-width:1240px;margin:0 auto;padding:0 36px;">
       <div class="reveal">
         <div class="section-eyebrow">Live Moments</div>
         <h2 class="section-title">The Performances</h2>
       </div>
-      <div class="gallery-grid">
-        <div class="gallery-item reveal" onclick="openGalleryLightbox(this)" data-caption="Moment of Passion">
-          <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_overall/moment_of_passion.png" alt="Moment of Passion" loading="lazy" />
-          <div class="gallery-item-overlay"><span>View Full Size</span></div>
-          <div class="gallery-item-cap">Moment of Passion</div>
-        </div>
-        <div class="gallery-item reveal reveal-delay-1" onclick="openGalleryLightbox(this)" data-caption="Falls the Time">
-          <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_overall/falls_the_time.png" alt="Falls the Time" loading="lazy" />
+    </div>
+
+    <!-- ROWS 1, 2 & 3 — all inside the same padded container -->
+    <div style="max-width:1240px;margin:0 auto;padding:0 36px;">
+
+      <!-- ROW 1: Hero image — same width as the 3 boxes below -->
+      <div class="reveal" style="margin-top:48px;overflow:hidden;cursor:zoom-in;border:1px solid var(--border);" onclick="openGalleryLightbox(this)" data-caption="Upside Down">
+        <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/the_performances/upside_down.png" alt="Upside Down" loading="lazy" style="width:100%;height:auto;display:block;" />
+        <div class="gallery-item-overlay"><span>View Full Size</span></div>
+        <div class="gallery-item-cap">Upside Down</div>
+      </div>
+
+      <!-- ROW 2: Three images side by side -->
+      <div class="gallery-grid" style="margin-top:2px;">
+        <div class="gallery-item reveal" onclick="openGalleryLightbox(this)" data-caption="Falls the Time">
+          <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/12_songs_one_night/falls_the_time.png" alt="Falls the Time" loading="lazy" />
           <div class="gallery-item-overlay"><span>View Full Size</span></div>
           <div class="gallery-item-cap">Falls the Time</div>
         </div>
+        <div class="gallery-item reveal reveal-delay-1" onclick="openGalleryLightbox(this)" data-caption="Arjun — The Man">
+          <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/the_performances/arjun_the_man.png" alt="Arjun the Man" loading="lazy" />
+          <div class="gallery-item-overlay"><span>View Full Size</span></div>
+          <div class="gallery-item-cap">Arjun — The Man</div>
+        </div>
         <div class="gallery-item reveal reveal-delay-2" onclick="openGalleryLightbox(this)" data-caption="Wutdafkryingoutloud">
-          <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_overall/wutdafkryingoutloud.png" alt="Wutdafkryingoutloud" loading="lazy" />
+          <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/12_songs_one_night/wutdafkryingoutloud.png" alt="Wutdafkryingoutloud" loading="lazy" />
           <div class="gallery-item-overlay"><span>View Full Size</span></div>
           <div class="gallery-item-cap">Wutdafkryingoutloud</div>
         </div>
-        <div class="gallery-item reveal" onclick="openGalleryLightbox(this)" data-caption="Notes from Underground">
-          <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_overall/notes_from_underground.png" alt="Notes from Underground" loading="lazy" />
+      </div>
+
+      <!-- ROW 3: Three images side by side -->
+      <div class="gallery-grid" style="margin-top:2px;">
+        <div class="gallery-item reveal" onclick="openGalleryLightbox(this)" data-caption="Moment of Passion">
+          <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/the_performances/moment_of_passion.png" alt="Moment of Passion" loading="lazy" />
           <div class="gallery-item-overlay"><span>View Full Size</span></div>
-          <div class="gallery-item-cap">Notes from Underground</div>
+          <div class="gallery-item-cap">Moment of Passion</div>
         </div>
-        <div class="gallery-item reveal reveal-delay-1" onclick="openGalleryLightbox(this)" data-caption="Good Old Bunky — Coda">
-          <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_overall/good_old_bunky_coda.png" alt="Good Old Bunky Coda" loading="lazy" />
+        <div class="gallery-item reveal reveal-delay-1" onclick="openGalleryLightbox(this)" data-caption="Frenzy — CBGB NYC 1997">
+          <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/the_performances/frenzy_cbgb_nyc_1997.png" alt="Frenzy CBGB NYC 1997" loading="lazy" />
           <div class="gallery-item-overlay"><span>View Full Size</span></div>
-          <div class="gallery-item-cap">Good Old Bunky — Coda</div>
+          <div class="gallery-item-cap">Frenzy — CBGB NYC 1997</div>
         </div>
         <div class="gallery-item reveal reveal-delay-2" onclick="openGalleryLightbox(this)" data-caption="Relic of Coney Island">
-          <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_overall/relic_of_coney_island.png" alt="Relic of Coney Island" loading="lazy" />
+          <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/the_performances/relic_of_coney_island.png" alt="Relic of Coney Island" loading="lazy" />
           <div class="gallery-item-overlay"><span>View Full Size</span></div>
           <div class="gallery-item-cap">Relic of Coney Island</div>
         </div>
-        <div class="gallery-item reveal" onclick="openGalleryLightbox(this)" data-caption="Far Below Zero — Jam Session">
-          <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_overall/far_below_zero_jam_session.png" alt="Far Below Zero Jam Session" loading="lazy" />
-          <div class="gallery-item-overlay"><span>View Full Size</span></div>
-          <div class="gallery-item-cap">Far Below Zero — Jam Session</div>
-        </div>
-        <div class="gallery-item reveal reveal-delay-1" onclick="openGalleryLightbox(this)" data-caption="Community">
-          <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_overall/community.png" alt="Community" loading="lazy" />
-          <div class="gallery-item-overlay"><span>View Full Size</span></div>
-          <div class="gallery-item-cap">Community</div>
-        </div>
-        <div class="gallery-item reveal reveal-delay-2" onclick="openGalleryLightbox(this)" data-caption="Merchandise">
-          <img src="https://cwtqstdxiythhnedpqtp.supabase.co/storage/v1/object/public/JBRT/best_of_the_wildstarfires_live/screenshots_overall/merchandise.png" alt="Merch" loading="lazy" />
-          <div class="gallery-item-overlay"><span>View Full Size</span></div>
-          <div class="gallery-item-cap">Merchandise</div>
-        </div>
       </div>
+
     </div>
   </section>
 
