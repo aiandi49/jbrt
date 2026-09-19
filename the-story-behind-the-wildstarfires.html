@@ -53,8 +53,8 @@
       --on-accent: #06232A;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; scroll-padding-top: var(--safe-t); }
-    body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: calc(16px * var(--font-scale)); line-height: 1.6; overflow-x: hidden; transition: background .25s ease, color .25s ease; }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--safe-t); font-size: calc(16px * var(--font-scale)); }
+    body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; line-height: 1.6; overflow-x: hidden; transition: background .25s ease, color .25s ease; }
 
     .utility-bar { position: sticky; top: var(--safe-t); z-index: 50; display: flex; justify-content: flex-end; gap: 8px; padding: 10px 16px; background: var(--bg); background: color-mix(in srgb, var(--bg) 85%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
     .util-group { display: flex; align-items: center; gap: 2px; background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 3px; }
